@@ -42,9 +42,10 @@ function App() {
       <AppBar
         position="static"
         color="error"
-        sx={{ width: "100%", padding: 1 }}
+        sx={{ width: "100%", padding: 1, borderRadius: 10 }}
       >
         <Container maxWidth="xl">
+          s
           <Toolbar disableGutters>
             <img src="./logo.png" alt="logo" style={{ maxWidth: 180 }} />
 
