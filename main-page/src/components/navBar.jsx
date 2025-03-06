@@ -12,6 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
+//black blueish like robert industries
+
 const pages = ["Game Info", "Heroes", "Community", "Shop"];
 const settings = ["Log In", "Profile", "Settings", "Sign Up"];
 
@@ -42,8 +44,7 @@ function ResponsiveAppBar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="./logo.png" alt="logo" style={{ maxWidth: 180 }} />
-
+          <img src="./AESCENSION.png" alt="logo" style={{ maxWidth: 180 }} />
           <Box
             sx={{
               display: "flex",
@@ -105,7 +106,9 @@ function ResponsiveAppBar() {
               size="large"
               variant="contained"
               color="primary"
-              sx={{ clipPath: "polygon(100% 0, 100% 100%, 0% 100%, 20% 0)" }}
+              sx={{
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 25% 100%, 0 48%)",
+              }}
             >
               Play Now
             </Button>
