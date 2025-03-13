@@ -49,3 +49,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          publish_dir: ./_site   # The directory where the built site is located
+          publish_branch: gh-pages # Deploy back to the `gh-pages` branch
