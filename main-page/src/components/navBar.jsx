@@ -12,8 +12,6 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
-//black blueish like robert industries
-
 const pages = ["Game Info", "Heroes", "Community", "Shop"];
 const settings = ["Log In", "Profile", "Settings", "Sign Up"];
 
@@ -44,36 +42,63 @@ function ResponsiveAppBar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="./AESCENSION.png" alt="logo" style={{ maxWidth: 180 }} />
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
+          >
+            <img
+              src="./AESCENSION.png"
+              alt="logo"
+              style={{ maxWidth: 180, marginRight: 16 }}
+            />
+          </Box>
+
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "flex-end",
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              flexGrow: 1,
             }}
           >
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" }, float: "right" }}
+            <IconButton
+              size="large"
+              onClick={handleOpenNavMenu}
+              color="inherit"
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              <MenuIcon />
+            </IconButton>
+            <img
+              src="./AESCENSION.png"
+              alt="logo"
+              style={{ maxWidth: 150, marginLeft: 8 }}
+            />
           </Box>
+
+          <Menu
+            anchorEl={anchorElNav}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            anchorOrigin={{ vertical: "top", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "left" }}
+          >
+            {pages.map((page) => (
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{page}</Typography>
+              </MenuItem>
+            ))}
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{
+                  width: "100%",
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 25% 100%, 0 48%)",
+                }}
+              >
+                Play Now
+              </Button>
+            </MenuItem>
+          </Menu>
+
           <Box
             sx={{
               flexGrow: 1,
@@ -94,14 +119,15 @@ function ResponsiveAppBar() {
                   color: "white",
                   display: "block",
                   paddingRight: 8,
-                  padidngLeft: 8,
+                  paddingLeft: 8,
                 }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-          <Box sx={{ paddingRight: 8 }}>
+
+          <Box sx={{ display: { xs: "none", md: "block" }, paddingRight: 8 }}>
             <Button
               size="large"
               variant="contained"
@@ -113,7 +139,8 @@ function ResponsiveAppBar() {
               Play Now
             </Button>
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
+
+          <Box sx={{ marginLeft: "auto" }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Account" src="/static/images/avatar/2.jpg" />
@@ -121,25 +148,15 @@ function ResponsiveAppBar() {
             </Tooltip>
             <Menu
               sx={{ mt: "45px" }}
-              id="menu-appbar"
               anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              anchorOrigin={{ vertical: "top", horizontal: "right" }}
+              transformOrigin={{ vertical: "top", horizontal: "right" }}
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: "center" }}>
-                    {setting}
-                  </Typography>
+                  <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -149,4 +166,5 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;
