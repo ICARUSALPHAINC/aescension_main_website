@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import gameTitle from "../assets/AESCENSION.png";
-import backgroundImage from "../assets/background2.jpg";
+import backgroundImage from "../assets/bg3.png";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -10,7 +10,6 @@ const Homepage = () => {
     gsap.from("#gameTitle", {
       opacity: 0,
       duration: 1.5,
-      y: -100,
       ease: "power1.in",
       onComplete: () => {
         gsap.to("#button", {
