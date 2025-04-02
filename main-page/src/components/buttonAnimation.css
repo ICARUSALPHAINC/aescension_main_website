@@ -1,0 +1,61 @@
+.button-container {
+  position: relative;
+  display: inline-flex;
+  opacity: 0; /* Will be animated in by GSAP */
+}
+
+.button-border-light {
+  position: absolute;
+  inset: -1px;
+  border-radius: 0.75rem; /* rounded-xl */
+  opacity: 0.7;
+  background: linear-gradient(90deg, #44bcff, #ff44ec, #ff675e, #44bcff);
+  background-size: 300% 100%;
+  filter: blur(8px);
+  transition: all 1s;
+  animation: border-light-animation 3s infinite linear;
+}
+
+.button-container:hover .button-border-light {
+  opacity: 1;
+  inset: -4px;
+  transition-duration: 0.2s;
+}
+
+.button-text {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(17, 24, 39); /* bg-gray-900 */
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: all 0.2s;
+}
+
+.button-text:hover {
+  color: #b8e6ff;
+}
+
+.button-text:focus {
+  outline: none;
+  ring: 2px;
+  ring-offset: 2px;
+  ring-color: rgb(17, 24, 39); /* ring-gray-900 */
+}
+
+@keyframes border-light-animation {
+  0% {
+    background-position: 300% 50%;
+  }
+  50% {
+    background-position: 150% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
