@@ -8,7 +8,6 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 const Footer = () => {
   return (
     <footer className="bg-[#2a2d3e] text-white text-sm px-6 py-10">
-      {/* Top navigation and language */}
       <div className="flex flex-col md:flex-row md:justify-between items-center gap-6 mb-6">
         <nav className="flex flex-wrap justify-center gap-6 font-semibold">
           <a href="#">Careers</a>
@@ -25,19 +24,16 @@ const Footer = () => {
 
       <hr className="border-gray-600 mb-6" />
 
-      {/* Bottom section */}
       <div className="flex flex-col md:flex-row justify-between gap-10">
-        {/* Left section */}
         <div className="space-y-4">
-          {/* Placeholder logo */}
           <img
             src="./AESCENSION.png"
             alt="Company Logo"
             className="w-32 h-auto object-contain"
           />
           <p className="text-gray-400 max-w-md">
-            ©2025 Placeholder Entertainment, Inc. All trademarks referenced
-            herein are the property of their respective owners.{" "}
+            ©2025 ICARUS Entertainment, Inc. All trademarks referenced herein
+            are the property of their respective owners.{" "}
             <a href="#" className="underline">
               Do not sell or share my personal information
             </a>
@@ -52,9 +48,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right section */}
         <div className="flex flex-col items-center gap-4">
-          {/* ESRB-style placeholder logos */}
           <div className="flex gap-4">
             <div className="w-16 h-16 bg-white text-black flex items-center justify-center text-xs rounded">
               ESRB
@@ -64,7 +58,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social icons row */}
           <div className="flex gap-4 mt-2">
             <div className="flex gap-4 mt-2 text-white">
               <div className="w-9 h-9 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-500 transition">
